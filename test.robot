@@ -19,12 +19,12 @@ Suite Teardown  Stop React and Close Browser
 
 *** Test Cases ***
 
-Scenario: Wait until react app has been fully loaded
-  Wait until react app is fully loaded
+Scenario: Wait for react keyword can be called
+  Wait for react
 
-Scenario: Create React App
+Scenario: Wait for react keyword waits for loading
   Go to  ${SERVER}
-  Wait until react app is fully loaded
+  Wait for react
   Page should contain  Welcome to React
 
 
