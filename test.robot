@@ -25,6 +25,7 @@ Scenario: Wait until react app has been fully loaded
 Scenario: Create React App
   Go to  ${SERVER}
   Wait until react app is fully loaded
+  Page should contain  Welcome to React
 
 
 *** Keywords ***
