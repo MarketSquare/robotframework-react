@@ -25,7 +25,7 @@ install:
 - (cd tests/create-react-app && yarn install)
 - sleep 10
 script:
-- pybot test.robot
+- pybot tests
 notifications:
   email:
   - stollenwerk@kitconcept.com

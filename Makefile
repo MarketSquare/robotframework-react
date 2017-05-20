@@ -16,4 +16,4 @@ build:
 
 test:
 	@echo "Run Tests"
-	.py27/bin/pybot test.robot
+	.py27/bin/pybot tests
