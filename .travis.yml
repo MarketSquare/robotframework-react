@@ -23,6 +23,8 @@ install:
 - sudo pip install -r requirements.txt
 - sudo python setup.py develop
 - (cd tests/create-react-app && yarn install)
+- (cd tests/create-react-app && yarn start &)
+- sleep 10
 script:
 - pybot test.robot
 notifications:
