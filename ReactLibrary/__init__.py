@@ -20,11 +20,14 @@ class ReactLibrary:
         selenium2lib = BuiltIn().get_library_instance('Selenium2Library')
         while True:
             if reducer:
-                status = selenium2lib.execute_javascript(
-                    "return !window.appStore.getState()['{}'].isFetching".format(
-                        reducer
+                try:
+                    status = selenium2lib.execute_javascript(
+                        "return !window.appStore.getState()['{}'].isFetching".format(
+                            reducer
+                        )
                     )
-                )
+                except:  # noqa
+                    pass
             else:
                 status = selenium2lib.execute_javascript(
                     "return window.appStatus"
