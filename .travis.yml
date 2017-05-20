@@ -22,6 +22,7 @@ before_script:
 install:
 - sudo pip install -r requirements.txt
 - sudo python setup.py develop
+- (cd tests/create-react-app && yarn install)
 script:
 - make test
 notifications:
