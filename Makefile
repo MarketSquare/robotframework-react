@@ -13,6 +13,7 @@ build:
 	.py27/bin/pip install -r requirements.txt
 	.py27/bin/python setup.py develop
 	(cd tests/create-react-app && yarn install)
+	(cd tests/create-react-app-with-redux && yarn install)
 
 test:
 	@echo "Run Tests"
