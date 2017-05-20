@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    wait(1000).then(() => {
+    wait(2000).then(() => {
       this.setState({ isLoading: false })
     })
   }
