@@ -12,7 +12,8 @@ build:
 	virtualenv .py27
 	.py27/bin/pip install -r requirements.txt
 	.py27/bin/python setup.py develop
-	# (cd tests/test-basic && npm install)
+	(cd tests/create-react-app && yarn install)
+
 test:
 	@echo "Run Tests"
 	.py27/bin/pybot test.robot
