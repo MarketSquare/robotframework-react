@@ -47,7 +47,12 @@ In order to write your first robot test, make sure that you include Selenium2Lib
 
   *** Test Cases ***
 
-  Scenario: Webpack Dev Server
+  Scenario: Wait for react
     Go To  https://airbnb.com
     Wait for react
+    Page Should Contain  Airbnb Book unique homes
+
+  Scenario: Wait for react with reducer
+    Go To  https://airbnb.com
+    Wait for react  reducer=headlines
     Page Should Contain  Airbnb Book unique homes
