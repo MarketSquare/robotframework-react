@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from robot.api import logger
+from robot.libraries.BuiltIn import BuiltIn
 
 __version__ = '1.0'
 ROBOT_LIBRARY_DOC_FORMAT = 'reST'
@@ -24,3 +25,12 @@ class ReactLibrary:
         logger.console("-" * 78)
         logger.console("wait_unit_react_app_is_fully_loaded")
         logger.console("-" * 78)
+
+        selenium2lib = BuiltIn().get_library_instance('Selenium2Library')
+        while True:
+            status = selenium2lib.execute_javascript(
+                "return window.appStatus"
+            )
+            if status:
+                break
+        print status
