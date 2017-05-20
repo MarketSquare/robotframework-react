@@ -15,4 +15,4 @@ build:
 	# (cd tests/test-basic && npm install)
 test:
 	@echo "Run Tests"
-	.py27/bin/pybot tests
+	.py27/bin/pybot test.robot
