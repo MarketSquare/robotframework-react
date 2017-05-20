@@ -12,7 +12,7 @@ long_description = (
 setup(
     name='robotframework-react',
     version=version,
-    description="A robot framework library for React.",
+    description="A Robot Framework library for React.",
     long_description=long_description,
     classifiers=[
         'Development Status :: 3 - Alpha',
