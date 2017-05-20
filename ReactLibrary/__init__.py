@@ -18,7 +18,6 @@ class ReactLibrary:
     def wait_for_react(self, reducer=None):
 
         selenium2lib = BuiltIn().get_library_instance('Selenium2Library')
-        status = False
         while True:
             if reducer:
                 try:
