@@ -15,7 +15,7 @@ class ReactLibrary:
     def __init__(self):
         pass
 
-    def wait_until_react_app_is_fully_loaded(self):
+    def wait_for_react(self):
 
         selenium2lib = BuiltIn().get_library_instance('Selenium2Library')
         while True:
