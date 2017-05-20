@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-- 4.4.7
 - 6.9.1
 - 7.1.0
 cache:
@@ -24,7 +23,7 @@ install:
 - sudo pip install -r requirements.txt
 - sudo python setup.py develop
 script:
-- pybot tests
+- make test
 notifications:
   email:
   - stollenwerk@kitconcept.com
