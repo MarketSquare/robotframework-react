@@ -24,7 +24,7 @@ install:
 - sudo python setup.py develop
 - (cd tests/create-react-app && yarn install)
 script:
-- make test
+- pybot test.robot
 notifications:
   email:
   - stollenwerk@kitconcept.com
