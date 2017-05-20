@@ -25,7 +25,7 @@ setup(
     ],
     # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     keywords='robotframework react javascript',
-    author='Timo Stollenwerk',
+    author='Timo Stollenwerk & David Rodriguez Fuentes',
     author_email='stollenwerk@kitconcept.com',
     url='https://kitconcept.com',
     license='Apache License 2.0',

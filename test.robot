@@ -22,6 +22,11 @@ Suite Teardown  Stop React and Close Browser
 Scenario: Wait until react app has been fully loaded
   Wait until react app is fully loaded
 
+Scenario: Create React App
+  Go to  ${SERVER}
+  Wait until react app is fully loaded
+
+
 *** Keywords ***
 
 Start React and Open Browser
