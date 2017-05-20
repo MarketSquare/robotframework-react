@@ -32,9 +32,9 @@ Scenario: Wait for react keyword waits for loading
 *** Keywords ***
 
 Start React and Open Browser
-  Run process  yarn run build  shell=True  cwd=${CURDIR}/tests/create-react-app
-  Run process  yarn global add serve  shell=True  cwd=${CURDIR}/tests/create-react-app
-  Start process  serve -s build  shell=True  cwd=${CURDIR}/tests/create-react-app
+  Run process  yarn run build  shell=True  cwd=${CURDIR}
+  Run process  yarn global add serve  shell=True  cwd=${CURDIR}
+  Start process  serve -s build  shell=True  cwd=${CURDIR}
   Open Browser  ${SERVER}  ${BROWSER}
   Set Window Size  1280  1024
 
