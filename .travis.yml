@@ -5,6 +5,7 @@ node_js:
 cache:
   directories:
     - tests/create-react-app/node_modules
+    - tests/create-react-app-with-redux/node_modules
 dist: trusty
 addons:
   apt:
