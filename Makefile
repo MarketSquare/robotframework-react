@@ -1,13 +1,13 @@
 SHELL := /bin/bash
 CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-all: clean build test
+all: clean .py27 test
 
 clean:
 	@echo "Clean"
 	rm -rf .py27
 
-build:
+.py27:
 	@echo "Build"
 	virtualenv .py27
 	.py27/bin/pip install -r requirements.txt

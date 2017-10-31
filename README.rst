@@ -56,3 +56,28 @@ In order to write your first robot test, make sure that you include Selenium2Lib
     Go To  https://airbnb.com
     Wait for react  reducer=headlines
     Page Should Contain  Airbnb Book unique homes
+
+
+Keywords
+--------
+
+robotframework-react currently only provides a single keyword "Wait for React". The keyword makes sure the React app is fully loaded.
+
+When used without any parameter, "Wait for react" expects the React app to set a global variable named "window.appStatus" to true when the app is fully loaded.
+
+Example React reducer code::
+
+  export default combineReducers({
+    headlines,
+  });
+
+  const initialState = {
+    isFetching: false,
+    byId: {},
+    indexIds: [],
+  };
+
+A full example app can be found here:
+
+https://github.com/kitconcept/robotframework-react/blob/master/tests/create-react-app/test.robot
+
