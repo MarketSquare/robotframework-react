@@ -2,7 +2,7 @@ language: node_js
 node_js:
 - 6.11.5
 - 8.9.4
-- 9.0.0
+- 9.4.0
 cache:
   directories:
     - tests/create-react-app/node_modules
