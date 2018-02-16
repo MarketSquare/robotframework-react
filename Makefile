@@ -15,6 +15,10 @@ clean:
 	(cd tests/create-react-app && yarn install)
 	(cd tests/create-react-app-with-redux && yarn install)
 
+build-docs:
+	@echo "Build Keyword Documentation"
+	.py27/bin/python -m robot.libdoc ReactLibrary docs/index.html
+
 test:
 	@echo "Run Tests"
 	.py27/bin/pybot tests
