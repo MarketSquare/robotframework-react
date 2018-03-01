@@ -17,6 +17,10 @@ A Robot Framework library for React.
     :target: https://pypi.python.org/pypi/robotframework-react/
     :alt: License
 
+.. image:: https://raw.githubusercontent.com/kitconcept/robotframework-react/master/kitconcept.png
+   :alt: kitconcept
+   :target: https://kitconcept.com/
+
 
 Introduction
 ------------
