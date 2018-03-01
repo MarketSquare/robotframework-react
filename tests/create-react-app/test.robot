@@ -1,7 +1,7 @@
 *** Variables ***
 
 ${HOST}                 127.0.0.1
-${PORT}                 5000
+${PORT}                 3000
 ${BROWSER}              chrome
 ${SERVER}               http://${HOST}:${PORT}
 
@@ -9,13 +9,13 @@ ${SERVER}               http://${HOST}:${PORT}
 *** Settings ***
 
 Documentation   ReactLibrary Acceptance Tests
-Library         Selenium2Library  timeout=10  implicit_wait=0
+Library         Selenium2Library  timeout=5  implicit_wait=0
 Library         ReactLibrary
 Library         DebugLibrary
-Library         Process
+Library         WebpackLibrary
 
-Suite Setup     Start React and Open Browser
-Suite Teardown  Stop React and Close Browser
+Suite Setup     Start React and open browser
+Suite Teardown  Stop React and close browser
 
 
 *** Test Cases ***
@@ -32,13 +32,12 @@ Scenario: Wait for react keyword waits for loading
 *** Keywords ***
 
 Start React and Open Browser
-  Run process  yarn run build  shell=True  cwd=${CURDIR}
-  Run process  yarn global add serve  shell=True  cwd=${CURDIR}
-  Start process  serve -s build  shell=True  cwd=${CURDIR}
+  Start Webpack  yarn start  path=tests/create-react-app
   Open Browser  ${SERVER}  ${BROWSER}
   Set Window Size  1280  1024
 
 Stop React and Close Browser
   # stop react
-  Terminate All Processes  kill=True
+
+  Stop Webpack
   Close Browser
