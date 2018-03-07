@@ -5,3 +5,5 @@ robotframework-webpack==1.0.3
 Selenium==2.53.1
 twine==1.6.3
 zest.releaser==6.6.4
+tox
+

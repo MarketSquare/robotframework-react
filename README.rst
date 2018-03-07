@@ -67,23 +67,80 @@ In order to write your first robot test, make sure that you include Selenium2Lib
 Keywords
 --------
 
-robotframework-react currently only provides a single keyword "Wait for React". The keyword makes sure the React app is fully loaded.
+robotframework-react currently only provides a single keyword "Wait for React".
+The keyword makes sure the React app is fully loaded.
 
-When used without any parameter, "Wait for react" expects the React app to set a global variable named "window.appStatus" to true when the app is fully loaded.
 
-Example React reducer code::
+Plain React Example
+^^^^^^^^^^^^^^^^^^^
 
-  export default combineReducers({
-    headlines,
-  });
+When used without any parameter, "Wait for react" expects the React app to
+set a global variable named "window.appStatus" to true when the app is fully
+loaded.
+
+To make this work with your React app, add a global window.appStatus to your
+index.js::
+
+  window.appStatus = false
+  const updateStatus = () => {
+    window.appStatus = true
+  }
+
+  ReactDOM.render(<App updateStatus={updateStatus} />, document.getElementById('root'));
+
+Add an "isLoading" state to your App and update it on componentDidMount and componentDidUpdate (App.js)::
+
+  class App extends Component {
+    state = {
+      isLoading: true,
+    }
+
+    componentDidMount() {
+      wait(2000).then(() => {
+        this.setState({ isLoading: false })
+      })
+    }
+
+    componentDidUpdate() {
+      if (!this.state.isLoading) {
+        this.props.updateStatus()
+      }
+    }
+    ...
+  }
+
+You can find a full working example here: https://github.com/kitconcept/robotframework-react/tree/master/tests/create-react-app
+
+Robot Test: https://github.com/kitconcept/robotframework-react/blob/master/tests/create-react-app/test.robot
+
+Redux
+^^^^^
+
+When working with Redux, robotframework-react expects the React app to set
+and update an "isFetching" attribute in the Redux store::
+
+  window.appStore.getState()['{}'].isFetching
+
+To make this work, add an "isFetching" attribute to your reducer code::
 
   const initialState = {
     isFetching: false,
-    byId: {},
-    indexIds: [],
+    ...
   };
 
-A full example app can be found here:
+In the connect statement of your App, make sure you update the "isFetching" attribute properly::
 
-https://github.com/kitconcept/robotframework-react/blob/master/tests/create-react-app/test.robot
+  const mapStateToProps = state => ({
+    isFetching: state.headlines.isFetching,
+    ...
+  })
+
+
+You can find a full working example here:
+
+https://github.com/kitconcept/robotframework-react/tree/master/tests/create-react-app-with-redux
+
+Robot Test with Redux:
+
+https://github.com/kitconcept/robotframework-react/blob/master/tests/create-react-app-with-redux/test.robot
 
