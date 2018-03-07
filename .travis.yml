@@ -1,7 +1,7 @@
 language: python
 python:
-- "2.7"
-- "3.6"
+  - "2.7"
+  - "3.6"
 cache:
   directories:
     - tests/create-react-app/node_modules
@@ -13,6 +13,16 @@ addons:
       - google-chrome
     packages:
       - google-chrome-stable
+env:
+  - NODE_VERSION="8.9.4"
+before_install:
+  - nvm install $NODE_VERSION
+install:
+  - sudo pip install -r requirements.txt
+  - sudo python setup.py develop
+  - (cd tests/create-react-app && yarn install)
+  - (cd tests/create-react-app-with-redux && yarn install)
+  - sleep 10
 before_script:
   - node -v
   - wget "http://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip"
@@ -21,12 +31,6 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 2
-install:
-- sudo pip install -r requirements.txt
-- sudo python setup.py develop
-- (cd tests/create-react-app && yarn install)
-- (cd tests/create-react-app-with-redux && yarn install)
-- sleep 10
 script:
 - pybot tests
 notifications:
