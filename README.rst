@@ -116,25 +116,16 @@ Robot Test: https://github.com/kitconcept/robotframework-react/blob/master/tests
 Redux
 ^^^^^
 
-When working with Redux, robotframework-react expects the React app to set
-and update an "isFetching" attribute in the Redux store::
+When working with Redux, you have to pass the name of the reducer to the 'Wait for React' keyword::
 
-  window.appStore.getState()['{}'].isFetching
+  Wait for react  reducer=headlines
 
-To make this work, add an "isFetching" attribute to your reducer code::
+The reducer needs to implement an "isFetching" attribute in the Redux state::
 
   const initialState = {
     isFetching: false,
     ...
   };
-
-In the connect statement of your App, make sure you update the "isFetching" attribute properly::
-
-  const mapStateToProps = state => ({
-    isFetching: state.headlines.isFetching,
-    ...
-  })
-
 
 You can find a full working example here:
 
