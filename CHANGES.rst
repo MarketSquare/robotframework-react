@@ -1,4 +1,4 @@
-1.0.0-alpha.1 (unreleased)
+1.0.0-alpha.1 (2018-03-07)
 --------------------------
 
 - Initial release.
