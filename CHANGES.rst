@@ -1,5 +1,6 @@
-1.0a1 (unreleased)
-------------------
+1.0.0-alpha.1 (unreleased)
+--------------------------
 
-- Nothing changed yet.
+- Initial release.
+  [timo, davidrf]
 
