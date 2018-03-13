@@ -12,6 +12,7 @@ Documentation   ReactLibrary Acceptance Tests
 Library         Selenium2Library  timeout=10  implicit_wait=0
 Library         ReactLibrary
 Library         DebugLibrary
+Library         OperatingSystem
 Library         Process
 Library         WebpackLibrary
 
@@ -36,6 +37,7 @@ Start React and Open Browser
   # Run process  yarn run build  shell=True  cwd=${CURDIR}
   # Run process  yarn global add serve  shell=True  cwd=${CURDIR}
   # Start process  serve -s build  shell=True  cwd=${CURDIR}
+  Set environment variable  BROWSER  none
   Start Webpack  path=tests/create-react-app-with-redux
   Open Browser  ${SERVER}  ${BROWSER}
   Set Window Size  1280  1024

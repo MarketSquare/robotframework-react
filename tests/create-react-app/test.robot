@@ -12,6 +12,7 @@ Documentation   ReactLibrary Acceptance Tests
 Library         Selenium2Library  timeout=5  implicit_wait=0
 Library         ReactLibrary
 Library         DebugLibrary
+Library         OperatingSystem
 Library         WebpackLibrary
 
 Suite Setup     Start React and open browser
@@ -32,6 +33,7 @@ Scenario: Wait for react keyword waits for loading
 *** Keywords ***
 
 Start React and Open Browser
+  Set environment variable  BROWSER  none
   Start Webpack  yarn start  path=tests/create-react-app
   Open Browser  ${SERVER}  ${BROWSER}
   Set Window Size  1280  1024
