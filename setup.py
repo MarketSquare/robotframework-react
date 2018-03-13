@@ -36,7 +36,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'robotframework',
-        'robotframework-selenium2library',
+        'robotframework-seleniumlibrary',
     ],
     entry_points="""
     # -*- Entry points: -*-

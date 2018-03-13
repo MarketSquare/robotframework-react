@@ -41,11 +41,11 @@ Install robotframework-react with pip::
 Usage
 -----
 
-In order to write your first robot test, make sure that you include Selenium2Library and ReactLibrary. Create a test.robot file with the following content::
+In order to write your first robot test, make sure that you include SeleniumLibrary and ReactLibrary. Create a test.robot file with the following content::
 
   *** Settings ***
 
-  Library         Selenium2Library  timeout=10  implicit_wait=0
+  Library         SeleniumLibrary  timeout=10  implicit_wait=0
   Library         React Library
   Suite Setup     Open browser  https://airbnb.com  chrome
   Suite Teardown  Close browser

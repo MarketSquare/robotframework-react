@@ -9,7 +9,7 @@ ${SERVER}               http://${HOST}:${PORT}
 *** Settings ***
 
 Documentation   ReactLibrary Acceptance Tests
-Library         Selenium2Library  timeout=10  implicit_wait=0
+Library         SeleniumLibrary  timeout=10  implicit_wait=0
 Library         ReactLibrary
 Library         DebugLibrary
 Library         OperatingSystem
