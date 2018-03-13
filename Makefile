@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 CURRENT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
-all: clean .py27 .py36 test
+all: .py27 .py36 test
 
 clean:
 	@echo "Clean"
