@@ -22,7 +22,7 @@ class ReactLibrary:
         while True:
             if reducer:
                 status = seleniumlib.execute_javascript(
-                    "return !window.appStore.getState()['{}'].{}".format(
+                    "return !window.appStore.getState()['{0}'].{1}".format(
                         reducer,
                         stateName
                     )

@@ -25,12 +25,12 @@ export const headlinesActions = {
 }
 
 const initialState = {
-  isFetching: false,
+  isLoading: false,
   byId: {},
   indexIds: [],
 };
 
-const isFetching = (state = initialState.isFetching, { type }) => {
+const isLoading = (state = initialState.isLoading, { type }) => {
   switch (type) {
     case FETCH_HEADLINES_REQUEST:
       return true
@@ -61,7 +61,7 @@ const indexIds = (state = initialState.indexIds, { payload, type }) => {
 };
 
 export default combineReducers({
-  isFetching,
+  isLoading,
   byId,
   indexIds,
 })
