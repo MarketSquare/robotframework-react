@@ -120,12 +120,16 @@ When working with Redux, you have to pass the name of the reducer to the 'Wait f
 
   Wait for react  reducer=headlines
 
-The reducer needs to implement an "isFetching" attribute in the Redux state::
+The reducer shouldrimplement an "isFetching" attribute in the Redux state::
 
   const initialState = {
     isFetching: false,
     ...
   };
+
+Instead of adding "isFetching", you can also name the attribute whatever you want, and pass in the "stateName" parameter to the 'Wait for react' keyboard::
+
+   Wait for react  reducer=headlines  stateName=isLoading
 
 You can find a full working example here:
 
