@@ -120,7 +120,7 @@ When working with Redux, you have to pass the name of the reducer to the 'Wait f
 
   Wait for react  reducer=headlines
 
-The reducer shouldrimplement an "isFetching" attribute in the Redux state::
+The reducer should implement an "isFetching" attribute in the Redux state::
 
   const initialState = {
     isFetching: false,
