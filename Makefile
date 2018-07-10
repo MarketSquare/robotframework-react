@@ -39,3 +39,6 @@ test-27:
 test-36:
 	@echo "Run Tests on Python 3.6"
 	.py36/bin/pybot tests
+
+release:
+	.py27/bin/fullrelease
