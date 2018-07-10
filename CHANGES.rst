@@ -1,4 +1,4 @@
-1.0.0a2 (unreleased)
+1.0.0a2 (2018-07-10)
 --------------------
 
 - Switch from robotframework-selenium2library to robotframework-seleniumlibrary.
