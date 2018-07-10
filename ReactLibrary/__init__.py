@@ -15,15 +15,16 @@ class ReactLibrary:
     def __init__(self):
         pass
 
-    def wait_for_react(self, reducer=None):
+    def wait_for_react(self, reducer=None, stateName="isFetching"):
 
         seleniumlib = BuiltIn().get_library_instance('SeleniumLibrary')
         status = None
         while True:
             if reducer:
                 status = seleniumlib.execute_javascript(
-                    "return !window.appStore.getState()['{}'].isFetching".format(
-                        reducer
+                    "return !window.appStore.getState()['{0}'].{1}".format(
+                        reducer,
+                        stateName
                     )
                 )
             else:

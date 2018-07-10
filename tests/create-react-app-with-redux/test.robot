@@ -21,13 +21,16 @@ Suite Teardown  Stop React and Close Browser
 
 
 *** Test Cases ***
+Scenario: Wait for react keyword can be called with stateName
+  Wait for react  reducer=headlines  stateName=isLoading
+
 
 Scenario: Wait for react keyword can be called with reducer argument
   Wait for react  reducer=headlines
 
 Scenario: Wait for react keyword with reducer argument waits for loading
   Go to  ${SERVER}
-  Wait for react  reducer=headlines
+  Wait for react  reducer=headlines  stateName=isLoading
   Page should contain  React Europe
 
 
