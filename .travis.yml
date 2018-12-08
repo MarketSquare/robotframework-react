@@ -25,14 +25,14 @@ install:
   - sleep 10
 before_script:
   - node -v
-  - wget "http://chromedriver.storage.googleapis.com/2.35/chromedriver_linux64.zip"
+  - wget "http://chromedriver.storage.googleapis.com/2.44/chromedriver_linux64.zip"
   - unzip chromedriver_linux64.zip
   - sudo mv chromedriver /usr/local/bin
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 2
 script:
-- pybot tests
+- robot tests
 notifications:
   email:
   - stollenwerk@kitconcept.com
