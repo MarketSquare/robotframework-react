@@ -46,7 +46,7 @@ In order to write your first robot test, make sure that you include SeleniumLibr
   *** Settings ***
 
   Library         SeleniumLibrary  timeout=10  implicit_wait=0
-  Library         React Library
+  Library         ReactLibrary
   Suite Setup     Open browser  https://airbnb.com  chrome
   Suite Teardown  Close browser
 
