@@ -6,4 +6,4 @@ selenium==3.141.0
 zest.releaser==6.18.1
 twine==1.12.1
 requests==2.21.0
-tox==3.8.6
+tox==3.20.1
