@@ -33,6 +33,3 @@ before_script:
   - sleep 2
 script:
 - robot tests
-notifications:
-  email:
-  - stollenwerk@kitconcept.com
